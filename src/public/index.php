@@ -4,13 +4,9 @@ use App\Components\Route\RouteProvider;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-if (true === RouteProvider::run()) {
+RouteProvider::run();
 
-    require __DIR__ . '/../app/LeetCode/build_routes.php';
-
-    die(200);
-}
-
+require __DIR__ . '/../app/LeetCode/build_routes.php';
 
 function br()
 {

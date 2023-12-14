@@ -1,16 +1,81 @@
-Project Setup
+# Leet Code on PHP
 
-Start Dev
+### Services:
 
-    docker volume create --name=src-sync
-    docker-compose -f docker-compose-dev.yml up -d
-    docker-sync start
+- php (PHP 8.3 with PHP-FPM)
+- web (Nginx)
 
-Start
+## Requirements
 
-    docker-compose up -d
+- **Docker:** Ensure you have a stable version of [Docker](https://docs.docker.com/engine/install/) installed.
+- **Docker Compose:** Make sure you have a compatible version of [Docker Compose](https://docs.docker.com/compose/install/#install-compose).
 
-Stop
+## How To Deploy
 
-    docker-compose stop
-    docker-sync stop
+___
+___
+### Initial Setup
+
+### For the first time only:
+
+```bash
+cp .env.example .env
+```
+
+```bash
+docker-compose up -d
+```
+---
+    docker exec -it leet_code_php_container bash
+    composer install
+or
+```bash
+docker exec leet_code_php_container bash -c 'composer install'
+```
+___
+Visit: http://127.0.0.1:7070
+___
+___
+### From the Second Time Onwards:
+```bash
+docker-compose up -d
+docker exec -it leet_code_php_container bash
+```
+___
+___
+### Rebuild Docker images:
+```bash
+docker-compose build
+```
+#### *without cache
+```bash
+docker-compose build --no-cache
+```
+___
+___
+### Install additional packages:
+```bash
+docker exec leet_code_php_container bash -c 'composer require --dev phpunit/phpunit'
+```
+___
+___
+
+### Stop Docker containers
+```bash
+docker-compose stop
+```
+
+#### Stop and remove Docker containers, networks, and volumes created by
+
+```bash
+docker-compose down
+```
+___
+___
+
+## Open an Interactive Shell (Bash) Inside a Running Docker Container
+
+### php
+```bash
+docker-compose exec -it leet_code_php_container bash
+```

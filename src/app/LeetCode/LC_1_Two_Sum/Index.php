@@ -16,7 +16,7 @@ class Index
         echo "<h1>Solution:</h1>";
         $reflector = new \ReflectionClass(Solution::class);
         $file = $reflector->getFileName();
-        echo highlight_file($file);
+        echo highlight_file($file, true);
 
         return true;
     }
