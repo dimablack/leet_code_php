@@ -4,9 +4,10 @@ use App\Components\Route\RouteProvider;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-const PFRUN = 'public function run';
-
 if (true === RouteProvider::run()) {
+
+    require __DIR__ . '/../app/LeetCode/build_routes.php';
+
     die(200);
 }
 
@@ -31,14 +32,12 @@ function line_divider()
     echo '<br>' . '=====================================================================================================' . '<br>';
 }
 
-function makeLink($url)
+function makeLink(string $url)
 {
     $path = parse_url($url, PHP_URL_PATH);
     $pathParts = explode('/', trim($path, '/'));
 
     $problemName = end($pathParts);
 
-    $returnLink = "<a href='$url'>LeetCode Link: $problemName</a>";
-
-    return $returnLink;
+    return "<a href='$url'>LeetCode Link: $problemName</a>";
 }
