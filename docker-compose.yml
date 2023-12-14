@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  leet_code_php:
+    build:
+      context: ./
+      dockerfile: ./docker/php/Dockerfile
+    image: leet_code_php_image
+    container_name: leet_code_php_container
+#    restart: unless-stopped
+    volumes:
+      - ./:/app
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+
+  nginx:
+    image: nginx:1.12
+    ports:
+      - "7070:80"
+    volumes:
+      - ./src:/app/src
+      - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - leet_code_php

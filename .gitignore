@@ -1,0 +1,9 @@
+.idea
+.env
+databases
+docker-sync
+vendor
+.composer.lock
+/composer.lock
+/.docker-sync/
+.DS_STORE
