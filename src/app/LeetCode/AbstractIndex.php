@@ -4,7 +4,7 @@ namespace App\LeetCode;
 
 use ReflectionClass;
 
-abstract class IndexBase
+abstract class AbstractIndex
 {
     protected function displaySolutionCode($class): void
     {

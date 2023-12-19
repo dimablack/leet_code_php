@@ -2,13 +2,13 @@
 
 namespace App\LeetCode\LC_2_Add_Two_Numbers;
 
-use App\LeetCode\IndexBase;
+use App\LeetCode\AbstractIndex;
 use App\LeetCode\LeetCodeRouteControllerInterface;
 use App\LeetCode\ListNode;
 
-class Index extends IndexBase implements LeetCodeRouteControllerInterface
+class Index extends AbstractIndex implements LeetCodeRouteControllerInterface
 {
-    public function run()
+    public function run(): true
     {
         $solution = new Solution();
         $number1 = new ListNode(2, new ListNode(4, new ListNode(9)));

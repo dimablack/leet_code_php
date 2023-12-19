@@ -2,12 +2,12 @@
 
 namespace App\LeetCode\LC_26_Remove_Duplicates_from_Sorted_Array;
 
-use App\LeetCode\IndexBase;
+use App\LeetCode\AbstractIndex;
 use App\LeetCode\LeetCodeRouteControllerInterface;
 
-class Index extends IndexBase implements LeetCodeRouteControllerInterface
+class Index extends AbstractIndex implements LeetCodeRouteControllerInterface
 {
-    public function run()
+    public function run(): true
     {
         $solution = new Solution();
         $nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];

@@ -1,14 +1,11 @@
 <?php
 
-
 namespace App\LeetCode\LC_2_Add_Two_Numbers;
 
 use App\LeetCode\ListNode;
 
 class Solution
 {
-
-
     /**
      * @param ListNode $l1
      * @param ListNode $l2
