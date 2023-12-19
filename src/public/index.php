@@ -25,15 +25,5 @@ function brX3()
 
 function line_divider()
 {
-    echo '<br>' . '=====================================================================================================' . '<br>';
-}
-
-function makeLink(string $url)
-{
-    $path = parse_url($url, PHP_URL_PATH);
-    $pathParts = explode('/', trim($path, '/'));
-
-    $problemName = end($pathParts);
-
-    return "<a href='$url'>LeetCode Link: $problemName</a>";
+    echo '<br>' . '=========================================================================================' . '<br>';
 }

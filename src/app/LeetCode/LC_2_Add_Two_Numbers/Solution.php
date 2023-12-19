@@ -36,10 +36,4 @@ class Solution
 
         return $startList->next;
     }
-
-    public function run()
-    {
-
-
-    }
 }
