@@ -33,8 +33,6 @@ or
 docker exec leet_code_php_container bash -c 'composer install'
 ```
 ___
-Visit: http://127.0.0.1:7070
-___
 ___
 ### From the Second Time Onwards:
 ```bash

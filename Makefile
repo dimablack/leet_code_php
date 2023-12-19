@@ -14,12 +14,14 @@ help:
 			printf "%-30s %s\n" $$help_command $$help_info ; \
 		done
 
+include .env
+
 up: ## Start local environment
 	docker-compose up -d
 	@echo -e ${OK} 'Done'
 	@echo -e "Visit"
 	@echo -e ""
-	@echo -e "http://127.0.0.1:7070"
+	@echo -e "${APP_URL}:${APP_PORT}"
 	@echo -e ""
 
 
@@ -38,7 +40,6 @@ up-build: ## Start local environment and rebuild docker container
 	@echo -e ${OK} 'Done'
 	docker exec -it leet_code_php_container bash
 
-#docker exec leet_code_php_container bash -c 'composer require --dev phpunit/phpunit'
 stop: ## Stop local environment
 	docker-compose stop
 	@echo -e ${OK} 'Done'
@@ -46,11 +47,5 @@ stop: ## Stop local environment
 down: ## Remove local environment
 	docker-compose down
 
-test:
-	docker exec leet_code_php_container bash -c './vendor/bin/phpunit'
-
 composer-install:
 	docker exec leet_code_php_container bash -c 'composer install'
-
-predefine:
-	#mkdir -p "vendor"
