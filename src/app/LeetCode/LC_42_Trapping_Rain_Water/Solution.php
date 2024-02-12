@@ -27,6 +27,7 @@ class Solution
         for ($i = $n - 2; $i >= 0; $i--) {
             $rightMax[$i] = max($rightMax[$i + 1], $height[$i]);
         }
+
         $water = 0;
         for ($i = 0; $i < $n; $i++) {
             $water += min($leftMax[$i], $rightMax[$i]) - $height[$i];
