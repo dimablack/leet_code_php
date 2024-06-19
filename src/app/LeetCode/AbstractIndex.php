@@ -27,4 +27,16 @@ abstract class AbstractIndex
 
         return "<a href='$url'>LeetCode Link: $problemName</a>";
     }
+
+    protected function printResult($result, $expectedOutput): void
+    {
+        print_r(['Result' => $result]);
+        br();
+        echo "Test : ";
+        if ($result === $expectedOutput) {
+            echo "<span style='background-color: #4CAF50; color: white; padding: 1px 5px;'>Passed</span>";
+        } else {
+            echo "<span style='background-color: #f44336; color: white; padding: 1px 5px;'>Failed</span>";
+        }
+    }
 }
