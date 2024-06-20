@@ -8,22 +8,22 @@ RouteProvider::run();
 
 require __DIR__ . '/../app/LeetCode/build_routes.php';
 
-function br()
+function br(): void
 {
     echo ' <br>';
 }
 
-function brX2()
+function brX2(): void
 {
     echo ' <br><br>';
 }
 
-function brX3()
+function brX3(): void
 {
     echo ' <br><br><br>';
 }
 
-function line_divider()
+function line_divider(): void
 {
     echo '<br>' . '=========================================================================================' . '<br>';
 }
